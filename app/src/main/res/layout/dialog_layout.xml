@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:Addtools="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    app:ignore="NamespaceTypo">
+
+    <TextView
+        android:id="@+id/Set_Time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/timesnewromanpsmt"
+        android:gravity="center"
+        android:text="Are you sure you want to delete this user's entry?"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:visibility="visible"
+        Addtools:layout_constraintEnd_toEndOf="parent"
+        Addtools:layout_constraintHorizontal_bias="0.0"
+        Addtools:layout_constraintStart_toStartOf="parent"
+        Addtools:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonCancel"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
+        android:text="No"
+        android:textAllCaps="false"
+        Addtools:layout_constraintRight_toLeftOf="@id/materialButtonOk"
+        Addtools:layout_constraintTop_toBottomOf="@+id/Set_Time"
+        Addtools:strokeColor="@color/purple_700" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonOk"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:text="Yes"
+        android:textAllCaps="false"
+        Addtools:layout_constraintEnd_toEndOf="parent"
+        Addtools:layout_constraintTop_toBottomOf="@+id/Set_Time"
+        Addtools:layout_editor_absoluteX="141dp"
+        Addtools:strokeColor="@color/purple_700" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
