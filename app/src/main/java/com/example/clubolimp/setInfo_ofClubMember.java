@@ -89,6 +89,8 @@ public class setInfo_ofClubMember extends AppCompatActivity implements LoaderMan
                         Toast.makeText(setInfo_ofClubMember.this, "Not all text fields are filled!", Toast.LENGTH_SHORT).show();
                     } else if (firstNameLength < 2 || SurNameLength < 2) {
                         Toast.makeText(setInfo_ofClubMember.this, "Incorrect text entry!", Toast.LENGTH_SHORT).show();
+                    } else if (!(FirstName.getText().toString().matches("[a-zA-Z]+") || SurName.getText().toString().matches("[a-zA-Z]+"))) {
+                        Toast.makeText(setInfo_ofClubMember.this, "Whitespaces and Numbers are not allowed!", Toast.LENGTH_SHORT).show();
                     }
                     //Ограничение вводимых данных ⬇
                     else if

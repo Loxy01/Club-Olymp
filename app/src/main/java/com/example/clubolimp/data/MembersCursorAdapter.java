@@ -16,8 +16,8 @@ public class MembersCursorAdapter extends CursorAdapter {
         super(context, c, 0);
     }
 
-    // Метод newView используется для наполнения нового layout layout_cycle_for_items
-    // Но здесь пока данные не передаются
+    // The newView method is used to fill the new layout layout_cycle_for_items
+    // But no data is being transmitted here yet
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
         return LayoutInflater.from(context).inflate(R.layout.layout_cycle_for_items, viewGroup, false);
@@ -25,22 +25,22 @@ public class MembersCursorAdapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        // Связываем TextView c нашими items в layout_cycle_for_items:
+        // Linking TextView with our items in layout_cycle_for_items:
         TextView name = (TextView) view.findViewById(R.id.cycleName);
         TextView surname = (TextView) view.findViewById(R.id.cycleSurName);
         TextView categoryOfSport = (TextView) view.findViewById(R.id.cycleCategorySport);
 
-        // Создем индекс по которому потом будем обращаться к cursor
+        // Creating an index by which we will then access the cursor
         int FirstNameIndex = cursor.getColumnIndex(MemberEntry.COLUMN_FIRST_NAME);
         int LastNameIndex = cursor.getColumnIndex(MemberEntry.COLUMN_LAST_NAME);
         int SportIndex = cursor.getColumnIndex(MemberEntry.COLUMN_SPORT);
 
-        // Извлекаем значения из cursor:
+        // Extracting values from cursor:
         String sName = cursor.getString(FirstNameIndex);
         String sSurName = cursor.getString(LastNameIndex);
         String sCategoryOfSport = cursor.getString(SportIndex);
 
-        // Заполняем поля извлеченными выше значениями
+        // Fill in the fields with the values extracted above:
         name.setText(sName);
         surname.setText(sSurName);
         categoryOfSport.setText(sCategoryOfSport);

@@ -28,7 +28,6 @@ public class AddMemberActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         openTableMembers = findViewById(R.id.openTableMembers);
-
         openTableMembers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,7 +36,6 @@ public class AddMemberActivity extends AppCompatActivity {
             }
         });
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -50,8 +48,7 @@ public class AddMemberActivity extends AppCompatActivity {
         startActivity(toNextActivity);
     }
 
-
-
+    //This is an old way of extracting data, I left it here because someone may need it
     /*private void displayData() {
 
         String[] projection = {
@@ -61,7 +58,6 @@ public class AddMemberActivity extends AppCompatActivity {
                 MemberEntry.COLUMN_GENDER,
                 MemberEntry.COLUMN_SPORT
         };
-
         Cursor cursor = getContentResolver().query(
                 MemberEntry.CONTENT_URI,
                 projection,
@@ -99,11 +95,8 @@ public class AddMemberActivity extends AppCompatActivity {
                     currentSport
             );
         }
-
         cursor.close();
-
     }
-
     @Override
     protected void onStart() {
         super.onStart();

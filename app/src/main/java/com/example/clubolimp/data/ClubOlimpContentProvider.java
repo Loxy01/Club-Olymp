@@ -40,6 +40,7 @@ public class ClubOlimpContentProvider extends ContentProvider {
         return true;
     }
 
+    //Query method which returns the cursor
     @Override
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
@@ -73,26 +74,6 @@ public class ClubOlimpContentProvider extends ContentProvider {
         cursor.setNotificationUri(getContext().getContentResolver(), uri);
 
         return cursor;
-    }
-
-    /*public void searchMemberByName(String nameFromEditText, ListView listView){
-        SQLiteDatabase db = dbOpenHelper.getReadableDatabase();
-        Cursor cor = db.rawQuery("SELECT * FROM students WHERE name='"+ nameFromEditText +"'", null);
-            try{
-                cor.moveToFirst();
-                listView.setAdapter(null);
-                records.add(cor.getString(cor.getColumnIndex("name"))+""+cor.getString(cor.getColumnIndex("college")));
-                adapter.notifyDataSetChanged();
-            }catch (Exception e){
-                LoadToList();
-                Toast.makeText(getApplicationContext(),"Record not found",Toast.LENGTH_LONG).show();
-            }
-    }*/
-    public void searchMemberBySurName(){
-
-    }
-    public void searchMemberByRole(){
-
     }
 
     @Override
